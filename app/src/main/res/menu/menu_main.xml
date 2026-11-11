@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_connect"
+        android:title="@string/connect"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_disconnect"
+        android:title="@string/disconnect"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_mtu"
+        android:title="@string/mtu_title"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_read_phy"
+        android:title="读取PHY"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_set_phy"
+        android:title="@string/phy_title"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_priority"
+        android:title="设置连接优先级"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_save_log"
+        android:title="@string/save_log"
+        app:showAsAction="never" />
+</menu>

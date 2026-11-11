@@ -1,0 +1,94 @@
+name: Build APK
+
+# 把工程推到 GitHub 后，Actions 自动构建。
+# 无论成功失败，都会上传 build.log（纯文本，可直接把错误行发出来）。
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # 自动纠正“多套了一层目录”的情况：
+      # 若根目录没有 settings.gradle，就把下面一层含 settings.gradle 的目录内容上移。
+      - name: Fix nested project layout
+        run: |
+          if [ ! -f settings.gradle ]; then
+            found=$(find . -maxdepth 3 -name settings.gradle -not -path './.git/*' | head -n 1)
+            if [ -n "$found" ]; then
+              dir=$(dirname "$found")
+              echo "发现嵌套工程目录: $dir -> 上移一层"
+              cp -rf "$dir"/. .
+              rm -rf "$dir"
+            fi
+          fi
+
+      - name: Verify project layout
+        run: |
+          echo "---- 根目录 ----"
+          ls -la
+          if [ ! -f settings.gradle ]; then
+            echo "::error::仓库根目录没有 settings.gradle，Gradle 工程目录层级不对"
+            exit 1
+          fi
+          echo "---- settings.gradle ----"
+          cat settings.gradle
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle 8.4
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.4'
+
+      - name: Show environment
+        run: |
+          java -version
+          gradle --version | head -n 8
+          echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT"
+          ls "$ANDROID_SDK_ROOT/platforms" || true
+
+      - name: Build debug APK
+        id: build
+        continue-on-error: true
+        run: gradle :app:assembleDebug --no-daemon --stacktrace --console=plain 2>&1 | tee build.log
+
+      - name: Extract error lines
+        if: always()
+        run: |
+          {
+            echo "==== error: 行 ===="
+            grep -nE "error:|ERROR:|FAILURE:|What went wrong|Caused by|> Task .* FAILED" build.log || true
+            echo
+            echo "==== 日志尾部 ===="
+            tail -n 120 build.log || true
+          } > errors.txt
+          cat errors.txt | head -n 80
+
+      - name: Upload build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log
+          path: |
+            build.log
+            errors.txt
+
+      - name: Upload APK
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug
+          path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: ignore
+
+      - name: Fail if build failed
+        if: steps.build.outcome == 'failure'
+        run: exit 1

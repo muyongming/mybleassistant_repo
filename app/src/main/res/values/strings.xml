@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BLE调试助手</string>
+
+    <string name="scan_title">扫描设备</string>
+    <string name="tab_scan">扫描</string>
+    <string name="tab_bonded">已配对</string>
+    <string name="tab_service">服务</string>
+    <string name="tab_log">日志</string>
+
+    <string name="menu_device_mode">切换到设备模式</string>
+    <string name="menu_favourite">管理已收藏设备</string>
+    <string name="menu_info">设备信息</string>
+    <string name="menu_about">关于</string>
+
+    <string name="connect">连接</string>
+    <string name="disconnect">断开连接</string>
+    <string name="connecting">正在连接</string>
+    <string name="connect_success">连接成功</string>
+    <string name="connect_fail">连接失败</string>
+    <string name="connect_timeout">连接超时</string>
+    <string name="disconnected">已断开连接</string>
+
+    <string name="filter">过滤</string>
+    <string name="filter_name_hint">根据名称过滤</string>
+    <string name="filter_mac_hint">根据地址过滤</string>
+    <string name="filter_adv_hint">根据广播包过滤(HEX)</string>
+    <string name="filter_only_like">只显示收藏的设备</string>
+    <string name="filter_only_ble">只显示LE-only设备</string>
+    <string name="filter_no_name">only name is null</string>
+    <string name="filter_apply">确定</string>
+    <string name="filter_reset">重置</string>
+
+    <string name="send_title">发送数据</string>
+    <string name="send_single">单次发送</string>
+    <string name="send_timed">定时发送</string>
+    <string name="send_cyclic">连续发送</string>
+    <string name="send_file">文件发送</string>
+    <string name="send">发送</string>
+    <string name="stop">停止</string>
+    <string name="clear">清空</string>
+    <string name="close">关闭</string>
+    <string name="choose_file">选择文件</string>
+    <string name="random_length">随机长度</string>
+    <string name="send_interval">发送间隔</string>
+    <string name="send_speed">实时速度:</string>
+    <string name="send_count">发送:</string>
+    <string name="write_default">Write Default</string>
+    <string name="write_no_response">Write No Response</string>
+    <string name="input_hint">在此输入</string>
+    <string name="interval_error">间隔不能小于10ms</string>
+    <string name="content_empty">发送内容为空</string>
+    <string name="hex_error">待发送内容不符合hex格式</string>
+    <string name="send_ok">发送成功</string>
+    <string name="send_fail">发送失败</string>
+    <string name="send_cancel">取消发送</string>
+    <string name="file_not_exist">请先选择文件</string>
+
+    <string name="read_title">接收数据</string>
+    <string name="read">读取</string>
+    <string name="show_realtime">实时显示</string>
+    <string name="save_to_file">保存至文件</string>
+    <string name="recv_count">接收:</string>
+    <string name="recv_speed">实时速度:</string>
+    <string name="recv_notify">接收通知数据</string>
+    <string name="delete">删除</string>
+
+    <string name="mtu_title">修改MTU</string>
+    <string name="mtu_hint">输入MTU(23~517)</string>
+    <string name="mtu_empty">MTU不能为空</string>
+    <string name="mtu_not_support">当前设备不支持修改MTU</string>
+    <string name="mtu_set_ok">MTU大小设置为</string>
+    <string name="mtu_set_fail">设置MTU大小失败</string>
+
+    <string name="phy_title">设置偏好PHY</string>
+    <string name="phy_tx">Transmitter(TX) PHY:</string>
+    <string name="phy_rx">Receiver(RX) PHY:</string>
+    <string name="phy_1m">LE 1M (Legacy)</string>
+    <string name="phy_2m">LE 2M (Double speed)</string>
+    <string name="phy_coded">LE Coded (Long range)</string>
+    <string name="phy_read_ok">txPhy:</string>
+    <string name="phy_read_fail">读取PHY失败</string>
+    <string name="phy_set_fail">更新PHY失败</string>
+    <string name="android_version_limit">该功能仅Android 8.0及以上系统支持</string>
+
+    <string name="adv_detail">广播包详情</string>
+    <string name="copy">复制</string>
+    <string name="copy_ok">已复制到剪切板</string>
+    <string name="copy_fail">复制失败</string>
+
+    <string name="log_pause">暂停记录</string>
+    <string name="log_resume">继续记录</string>
+    <string name="log_clear">清空日志</string>
+    <string name="log_copy">复制到剪切板</string>
+    <string name="save_log">导出日志</string>
+
+    <string name="permission_denied">未获取到权限，无法扫描附近设备</string>
+    <string name="bluetooth_off">蓝牙未打开</string>
+    <string name="ble_not_support">该设备不支持BLE4.0</string>
+    <string name="favourite_add">收藏成功</string>
+    <string name="favourite_remove">移除收藏成功</string>
+
+    <string name="device_mode_title">设备(从机)模式</string>
+    <string name="broadcast_on">开启广播</string>
+    <string name="broadcast_off">关闭广播</string>
+    <string name="no_host">未连接主机</string>
+    <string name="host_name">主机名称：%1$s\n主机地址：%2$s</string>
+    <string name="peripheral_tip">开启广播后等待主机连接，收到主机数据会实时显示，也可向主机发送数据。</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+</resources>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dialog_card"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <TextView
+            android:id="@+id/tvPhyTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/phy_title"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/phy_tx"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp" />
+
+        <CheckBox
+            android:id="@+id/cbTx1m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/phy_1m"
+            android:textSize="13sp" />
+
+        <CheckBox
+            android:id="@+id/cbTx2m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/phy_2m"
+            android:textSize="13sp" />
+
+        <CheckBox
+            android:id="@+id/cbTxCoded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/phy_coded"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/phy_rx"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp" />
+
+        <CheckBox
+            android:id="@+id/cbRx1m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/phy_1m"
+            android:textSize="13sp" />
+
+        <CheckBox
+            android:id="@+id/cbRx2m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/phy_2m"
+            android:textSize="13sp" />
+
+        <CheckBox
+            android:id="@+id/cbRxCoded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/phy_coded"
+            android:textSize="13sp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupCoded"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <RadioButton
+                android:id="@+id/rbS2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="S2 (500kbps)"
+                android:textSize="13sp" />
+
+            <RadioButton
+                android:id="@+id/rbS8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="S8 (125kbps)"
+                android:textSize="13sp" />
+
+            <RadioButton
+                android:id="@+id/rbCodedNone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="No preferred method"
+                android:textSize="13sp" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_primary"
+                android:text="@string/cancel"
+                android:textColor="@color/colorPrimary"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/btnSet"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_primary"
+                android:text="SET"
+                android:textColor="@color/colorPrimary"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

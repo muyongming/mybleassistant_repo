@@ -1,0 +1,30 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+        // 国内镜像（无梯子时必须）
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+        // FastBleLib 只发布在 jcenter，用阿里云 jcenter 镜像拉取（有效）
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+rootProject.name = 'BleDebugAssistant'
+include ':app'
+// 若想改成源码方式引入 FastBle，取消下一行注释并把 app/build.gradle 的
+// implementation 'com.clj.fastble:FastBleLib:2.3.4' 换成 implementation project(':FastBleLib')
+// include ':FastBleLib'

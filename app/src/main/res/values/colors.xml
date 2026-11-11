@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFD81B60</color>
+    <color name="colorPrimaryDark">#FFC2185B</color>
+    <color name="colorAccent">#FFE91E63</color>
+    <color name="text_primary">#FF000000</color>
+    <color name="text_secondary">#FFA69A9A</color>
+    <color name="bg_page">#FFEFEEEE</color>
+    <color name="divider">#FFE1DDDD</color>
+    <color name="log_tx">#FF1E88E5</color>
+    <color name="log_rx">#FF2E7D32</color>
+    <color name="log_info">#FF6A1B9A</color>
+    <color name="log_error">#FFC62828</color>
+    <color name="log_time">#FF9E9E9E</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
